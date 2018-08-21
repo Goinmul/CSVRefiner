@@ -20,10 +20,10 @@ public class CSVReadingWithFilterTest {
 
 	// input : a csv file
 	// output : a refined csv file
-
+	
 	//tested method
 	CSVReadingWithFilter instance1 = new CSVReadingWithFilter();
-
+	
 	// test for "soft" refining
 	@Test public void refining_test_soft() throws IOException
 	{

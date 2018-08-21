@@ -9,19 +9,12 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import com.DataRefiner.CSVWriting;
-/**
- * a dump file will be created after testing.
- * You might want to delete that file. (file directory : line 44)
- * 
- * @author HyunWoo Kwon
- *
- */
+
 public class CSVWritingTest {
 	
 	// input : a single ArrayList<String[]>
 	// output : a csv file
 	
-	// in the file directory, a test_file will be created. So you have to delete it later.
 	File file = new File("d:/writing_test_output.csv");
 	
 	//tested method
@@ -45,6 +38,9 @@ public class CSVWritingTest {
 		
 		//check if the written file exists or not
 		assertNotNull(file.exists());
+		
+		// after testing, delete file automatically
+		file.delete();
 		
 	}
 
