@@ -74,14 +74,14 @@ public class CSVReadingWithFilter {
 					{                                                
 						// extract a string, from the last cell of each line in the csv file, for filtering.
 						
-						// usually eachLine[12] ~ eachLine[15] are empty, and some lines have data at 12th or 13th index.
-						// hence I should know what index is the last index that is containing valid data.
+						// in my csv data file, usually eachLine[12] ~ eachLine[15] are empty, and only a handful of lines have data at 12th or 13th index.
+						// Therefore I should know what index is the last index containing valid data.
 						// to do this, I made this while loop, which starts checking from the last cell of String[] eachLine(usually empty),
 						// then stops checking until it finds a cell containing valid data.
 						int csv_row_index_size = eachLine.length-1;
-						while(eachLine[csv_row_index_size].isEmpty()) // keep checking starting from the last index,
+						while(eachLine[csv_row_index_size].isEmpty()) // keep checking, from right(last index) to left(first index) of an array
 						{
-							csv_row_index_size--; // then keep diminishing the index for checking
+							csv_row_index_size--; // moving from right to left of an array
 						}
 						String last_cell = eachLine[csv_row_index_size]; // after finding, hand over the last cell's data
 						
@@ -94,6 +94,7 @@ public class CSVReadingWithFilter {
 							if(last_cell.contains(possible_pattern) == true) // check if the last cell contains that pattern.
 							{
 								highly_FP = true; // if the last cell contains highly_FP pattern, then set the boolean value as 'true'.
+								break; // break prevents "dd" data flow anomaly
 							}
 						}
 						// if the line is judged as a highly FP line(Higly_FP == true), 

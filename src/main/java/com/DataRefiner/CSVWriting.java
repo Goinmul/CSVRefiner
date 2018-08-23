@@ -14,7 +14,7 @@ public class CSVWriting {
 		// ((!))
 		// ArrayList<String[]> refined_list = new ArrayList<String[]>();
 		// refined_list = refinedData; 
-		// wonder if this is good habit or not. #1 directly use / #2 move data via another data structure
+		// wonder if this is good habit or not. #1 directly use / #2 pass data via another data structure
 		
 		// exception handling
 		if (refinedData.isEmpty())
